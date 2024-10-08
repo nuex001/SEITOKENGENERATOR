@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import Nav from './layouts/Nav'
 import Home from './pages/Home'
 
