@@ -1,0 +1,306 @@
+.home {
+  width: 100%;
+  height: calc(100vh - 9em);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6em;
+  padding: 0em 6em;
+  color: #fff;
+  margin-bottom: top;
+}
+.home .text {
+  width: 40%;
+  height: auto;
+  /* border: 2px solid #fff; */
+}
+.home form {
+  width: 60%;
+  height: auto;
+}
+
+.home .text h1 {
+  font-size: 8em;
+  background: linear-gradient(to right, #780000 0%, #9e1f19 50%, #780000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.2em;
+}
+.home .text p {
+  font-size: 2em;
+  margin: 1em 0em;
+}
+
+.home .text ul {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+.home .text ul li {
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+}
+
+.home .text ul li span {
+  width: 30px;
+  height: 30px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #780000 0%, #9e1f19 50%, #780000 100%);
+  border-radius: 50%;
+  position: relative;
+  z-index: 1; /* Place behind the number */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+.home .text ul li:nth-child(2) {
+  margin-left: 1em;
+}
+.home .text ul li:nth-child(3) {
+  margin-left: 2em;
+}
+.home .text ul li:nth-child(4) {
+  margin-left: 3em;
+}
+
+/* Adding the neon glow effect */
+.home .text ul li span::after {
+  content: "";
+  position: absolute;
+  top: -5px; /* Adjust to position the glow */
+  left: -5px; /* Adjust to position the glow */
+  right: -5px; /* Adjust to position the glow */
+  bottom: -5px; /* Adjust to position the glow */
+  background: linear-gradient(
+    to right,
+    rgba(120, 0, 0, 0.7),
+    rgba(158, 31, 25, 0.7)
+  );
+  border-radius: 50%;
+  filter: blur(8px); /* Creates the glow effect */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  z-index: -1; /* Place behind the number */
+}
+
+/* Keyframes for the breathing effect */
+@keyframes breathing {
+  0% {
+    opacity: 0.7; /* Starting opacity */
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 1; /* Full opacity */
+    filter: blur(12px); /* Slightly more blur for breathing */
+  }
+  100% {
+    opacity: 0.7; /* Return to starting opacity */
+    filter: blur(8px);
+  }
+}
+
+/* Show glow effect on hover */
+.home .text ul li.active span::after {
+  opacity: 1;
+  animation: breathing 1.5s infinite; /* Breathing animation */
+  filter: drop-shadow(0 0 1rem #780000);
+}
+
+/* FORM */
+.home form .connectCont {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home form .details {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.home form .details h1 {
+  font-size: 8em;
+  background: linear-gradient(to right, #780000 0%, #9e1f19 50%, #780000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.2em;
+}
+.home form .details .rows {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.4em;
+  margin: 1em;
+  padding-left: 6em;
+}
+.home form .details .rows label {
+  font-size: 2em;
+  background: linear-gradient(to right, #780000 0%, #9e1f19 50%, #780000 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+}
+.home form .details .rows input {
+  width: 100%;
+  height: 50px;
+  font-family: "Afacad Flux", sans-serif;
+  font-size: 1.8em;
+  font-weight: 600;
+  padding: 0em 1em;
+  border: none;
+  outline: none;
+  color: #000;
+  border-radius: 5px;
+}
+.home form .details button {
+  font-size: 2.4em;
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Afacad Flux", sans-serif;
+  background: linear-gradient(to right, #780000 0%, #9e1f19 50%, #780000 100%);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  margin-top: 1.4em;
+}
+.home .loadingCont {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home .loadingCont .loader {
+  width: 150px;
+  aspect-ratio: 1;
+  --c: no-repeat radial-gradient(farthest-side, #780000 92%, #9e1f19);
+  background: var(--c) 50% 0, var(--c) 50% 100%, var(--c) 100% 50%,
+    var(--c) 0 50%;
+  background-size: 10px 10px;
+  animation: l18 1s infinite;
+  position: relative;
+}
+.home .loadingCont .loader::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: 3px;
+  background: repeating-conic-gradient(#0000 0 35deg, #780000 0 90deg);
+  -webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 3px), #000 0);
+  border-radius: 50%;
+}
+@keyframes l18 {
+  100% {
+    transform: rotate(0.5turn);
+  }
+}
+
+.home .addCont {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.home .addCont .subCont {
+  width: 100%;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.home .addCont .subCont h2 {
+  font-size: 3em;
+  color: #fff;
+  font-weight: 800;
+}
+.home .addCont .subCont .copyBtn {
+  font-size: 6em;
+  color: #fff;
+  cursor: pointer;
+  transition: color 500ms ease-in-out;
+}
+.home .addCont .subCont .copyBtn:active {
+  color: #780000;
+}
+.home .addCont button {
+  font-size: 2.4em;
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Afacad Flux", sans-serif;
+  background: linear-gradient(to right, #780000 0%, #9e1f19 50%, #780000 100%);
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+/* ************MEDIA QUERRY********************** */
+
+/* ********@MOBILE********* */
+
+@media (max-width: 767px) {
+  .home {
+    height: auto;
+    gap: 6em;
+    padding: 0em 1em;
+    /*  */
+    flex-direction: column;
+    padding-top: 4em;
+  }
+  .home .text {
+    width: 100%;
+    height: auto;
+  }
+  .home form {
+    width: 100%;
+    min-height: 200px;
+  }
+
+  .home .text h1 {
+    font-size: 3.4em;
+  }
+  .home .text p {
+    font-size: 1.4em;
+    margin: 1em 0em;
+  }
+
+  /* FORM */
+  .home form .details h1 {
+    font-size: 4em;
+  }
+  .home form .details .rows {
+    margin: 1em;
+    padding: 0em 2em;
+  }
+  .home .addCont .subCont h2 {
+    font-size: 2em;
+    word-break: break-all;
+  }
+  .home .addCont .subCont .copyBtn {
+    font-size: 4em;
+  }
+}
