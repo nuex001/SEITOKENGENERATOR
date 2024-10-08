@@ -9,13 +9,13 @@ import {
   darkTheme,
 } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
-import { seiDevnet } from "wagmi/chains";
+import { sei } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const config = getDefaultConfig({
   appName: "SEITOKENBUILDER",
   projectId: import.meta.env.VITE_PROJECTID,
-  chains: [seiDevnet],
+  chains: [sei],
 });
 const queryClient = new QueryClient();
 
