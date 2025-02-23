@@ -83,10 +83,8 @@ function Home() {
       <div className="text">
         <h1>SEI TOKEN GENERATOR</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo illum
-          vitae ea reprehenderit est consequuntur iure quaerat! Iure quam
-          eveniet officia aspernatur voluptatibus odio laboriosam veniam quod
-          porro. Cum, inventore.
+        Easily create and deploy your own tokens on the Sei blockchain with just a few simple steps. Whether you're launching a new project or need a custom token for your dApp, our token generator simplifies the process. <br/>
+          Start by connecting your wallet. We support a variety of wallets to ensure easy access to Sei’s ecosystem.
         </p>
         <ul>
           {steps.map((step, index) => (
